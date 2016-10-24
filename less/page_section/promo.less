@@ -5,9 +5,11 @@
   // background-position: center;
   // background-size: cover;
   position: relative;
-  padding-top: 198px;
+  padding-top: 125px;
+  padding-bottom: 110px;
   box-sizing: border-box;
   text-align: center;
+  
 
   &:after {
     content: '';
@@ -18,7 +20,8 @@
     right: 0;
     margin: auto;
     background-color: @bg-blue;
-    opacity: 0.15;
+    opacity: 0.2;
+    z-index: -1;
   }
 
   &__title {
@@ -70,6 +73,8 @@
     font-size: 16px;
     text-transform: uppercase;
     color: @white;
+    font-family: @font-circe;
+    font-weight: bold;
   }
 }
 
@@ -77,13 +82,13 @@
   text-align: center;
   color: @white;
   box-sizing: border-box;
-  // padding-left: 14px;
   
   &__item {
     display: inline-block;
     margin: 30px;
     transform: rotate(-45deg);
     transform-origin: 32px 32px;
+    font-family: @font-circe;
   }
 
   &__number {
@@ -94,7 +99,7 @@
 
   &__num {
     font-size: 35px;
-    display: inline-block;
+    display: block;
     line-height: 60px;
     transform: rotate(45deg);
   }
@@ -106,35 +111,5 @@
     line-height: 31px;
     text-transform: uppercase;
     margin-left: 2px;
-  }
-}
-
-.video {
-  position: absolute;
-  min-width: 100%;
-  min-height: 100%;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  z-index: -2;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    background-color: blue;
-    opacity: 0.5;
-    z-index: -1;
-  }
-
-  & video {
-    width: 100%;
-    min-height: 100%;
   }
 }

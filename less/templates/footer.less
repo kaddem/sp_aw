@@ -1,10 +1,12 @@
 .footer {
+  font-size: 0;
   background-color: @white;
   padding: 20px 0 16px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  font-family: @font-circe;
+  // position: absolute;
+  // left: 0;
+  // bottom: 0;
+  // width: 100%;
   // position: fixed;
   // width: 100%;
   // bottom: 0;
@@ -13,6 +15,9 @@
   
   .privacy {
     .col-4;
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
 
     &__link {
       display: inline-block;
@@ -20,13 +25,16 @@
       text-decoration: none;
       color: @text-gray;
       font-size: 12px;
-      line-height: 35px;
+      // line-height: 35px;
     }
   }
 
   .social {
     .col-4;
+    float: none;
+    display: inline-block;
     text-align: center;
+    vertical-align: middle;
 
     &__link {
       width: 31px;
@@ -63,11 +71,14 @@
 
   .contacts {
     .col-4;
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
     text-align: right;
 
     &__text {
       margin: 0;
-      line-height: 35px;
+      // line-height: 35px;
       font-size: 12px;
       text-transform: uppercase;
       color: @text-gray;
@@ -80,60 +91,3 @@
   }
 
 }
-
-// .footer {
-//   color: #fff;
-//   // background-color: @dark-gray;
-
-//   &__head {
-//     font-size: 14px;
-//     text-transform: uppercase;
-//     color: @white;
-//     font-weight: normal;
-//   }
-
-//   &__list {
-//     font-size: 14px;
-//     padding-left: 0;
-    
-//     & li {
-//       list-style: none;
-//       margin-bottom: 5px;
-//     }
-
-//     & a {
-//       color: @white;
-//       text-decoration: none;
-//       font-size: 12px;
-//       line-height: 16px;
-
-//       &:hover {
-//         // color: @orange;
-//       }
-//     }
-//   }
-
-//   &__logo {
-//     .col-3;
-//   }
-
-//   &__catalog {
-//     .col-2;
-//   }
-
-//   &__partners {
-//     .col-2;
-//   }
-
-//   &__contacts {
-//     .col-2;
-//   }
-
-//   &__pay {
-//     .col-3;
-//   }
-
-//   .copypast {
-//     text-align: right;
-//   }
-// }
