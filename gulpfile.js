@@ -69,6 +69,11 @@ gulp.task('video', function() {
     .pipe(gulp.dest(CFG.PATH_PUBLIC + 'video/'));
 });
 
+gulp.task('favicon', function() {
+  return gulp.src('html/*.ico')
+    .pipe(gulp.dest(CFG.PATH_PUBLIC));
+});
+
 gulp.task('fonts', function() {
   return gulp.src('fonts/**/*.*')
     .pipe(gulp.dest(CFG.PATH_PUBLIC + 'fonts/'));
@@ -118,5 +123,5 @@ gulp.task('serve', gulp.parallel(
 
 // gulp.task('init', gulp.series(['path', 'js', 'style', 'revision', 'html', 'jquery', 'image', 'sprite']));
 // gulp.task('build', gulp.series(['path', 'js', 'style', 'revision:clean', 'revision', 'html', 'jquery', 'image', 'sprite']));
-gulp.task('init', gulp.series(['path', 'js', 'style', 'html', 'jquery', 'image', 'sprite', 'video', 'fonts']));
-gulp.task('build', gulp.series(['path', 'js', 'style', 'html', 'jquery', 'image', 'sprite', 'video', 'fonts']));  
+gulp.task('init', gulp.series(['path', 'js', 'style', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));
+gulp.task('build', gulp.series(['path', 'js', 'style', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));  

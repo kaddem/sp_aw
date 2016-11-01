@@ -31,7 +31,7 @@
     font-size: 50px;
     color: @red;
     text-transform: uppercase;
-    font-weight: normal;
+    font-weight: 500;
     margin: 20px 0;
   }
 
@@ -52,11 +52,17 @@
     text-transform: uppercase;
     color: @white;
     padding: 13px 20px;
+    font-weight: bold;
     border: 3px solid @red;
     text-decoration: none;
     box-sizing: border-box;
     min-width: 210px;
     max-width: 350px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: @red;
+    }
   }
 
 }
