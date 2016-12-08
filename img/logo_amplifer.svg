@@ -1,0 +1,30 @@
+<?xml height="70px" version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="70%" height="140px" viewBox="0 0 140 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo_round</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <style>
+            #oval {
+                fill: #ffffff;
+            }
+            #a {
+                fill: none;
+            }
+        </style>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#EE0000" offset="0%"></stop>
+            <stop stop-color="#EE0070" offset="28.29233%"></stop>
+            <stop stop-color="#814BAF" offset="65.994606%"></stop>
+            <stop stop-color="#00ACFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo_round">
+            <g id="Group-4">
+                <circle id="oval" cx="70" cy="70" r="70"></circle>
+                <path d="M33.5,103 L62.5,30 L77.5,30 L106.5,102.951172 L91,103 L86.6999969,92 L53.3000031,92 L49,103 L33.5,103 Z M70,49.2890625 L59,77 L81,77 L70,49.2890625 Z" id="a"></path>
+            </g>
+        </g>
+    </g>
+</svg>

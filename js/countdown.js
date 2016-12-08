@@ -18,15 +18,15 @@ function getTimeRemaining(endtime){
 function initializeClock(id, endtime){
   var clock = document.getElementById(id);
   var timeinterval = setInterval(function(){
-  var t = getTimeRemaining(endtime);
-  $('#day').text(t.days);
-  $('#hour').text(t.hours);
-  $('#min').text(t.minutes);
-  $('#second').text(t.seconds);
-
-  if(t.total<=0){
-    clearInterval(timeinterval);
-   }
+    var t = getTimeRemaining(endtime);
+    $('#day').text(t.days);
+    $('#hour').text(t.hours);
+    $('#min').text(t.minutes);
+    $('#second').text(t.seconds);
+    
+    if(t.total<=0){
+      clearInterval(timeinterval);
+    }
   },1000);
 }
   

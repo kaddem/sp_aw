@@ -1,9 +1,21 @@
 .promo {
   position: relative;
-  padding-top: 125px;
-  padding-bottom: 110px;
+  // padding-top: 50px;
+  height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
   text-align: center;
+
+  & > .container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
   
 
   &:after {
@@ -44,6 +56,21 @@
     margin-top: 33px;
     margin-bottom: 30px;
     line-height: 1.5;
+  }
+
+  &__endtime {
+    margin-top: 90px;
+    font-size: 24px;
+    font-family: @font-circe;
+    text-transform: uppercase;
+    color: @white;
+    font-weight: normal;
+
+    & strong {
+      font-family: @font-circe;
+      font-weight: normal;
+      color: @red;
+    }
   }
 
   &__link {

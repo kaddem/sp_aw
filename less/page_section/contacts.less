@@ -1,0 +1,66 @@
+.contact {
+  overflow: hidden;
+  height: 600px;
+  background-image: linear-gradient(@white 0%, @white 50%, @text-nav-gray 50%);
+  
+  & .container {
+    position: relative;
+  }
+
+  &__map {
+    width: 100vw;
+    position: absolute;
+    left: 318px;
+    top: 0;
+    height: 600px;
+  }
+
+  &__address {
+    position: relative;
+    z-index: 1000;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+    background-image: url(../img/bg_contacts.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__text {
+    padding-top: 40px;
+    position: absolute;
+    text-align: center;
+    width: 60%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+
+    & strong {
+      display: block;
+      font-size: 35px;
+      text-transform: uppercase;
+      font-weight: normal;
+      color: @text-nav-gray;
+      margin-bottom: 10px;
+    }
+
+    & p {
+      margin-top: 0;
+      margin-bottom: 0;
+      color: @red;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80px;
+    top: 160px;
+  }
+}

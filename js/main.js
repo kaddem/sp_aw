@@ -1,5 +1,7 @@
 @@include('jquery.vide.js')
-@@include('component.js')
-@@include('tabs.js')
+@@include('tabulous.js')
+
 @@include('countdown.js')
 @@include('resize.js')
+@@include('nav.js')
+@@include('tabs.js')

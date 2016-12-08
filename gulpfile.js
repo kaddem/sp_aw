@@ -10,12 +10,13 @@ var cssnano = require('gulp-cssnano');
 var rename = require('gulp-rename');
 var gulpif = require('gulp-if');
 var imagemin = require('gulp-imagemin');
+var mqpacker = require('css-mqpacker');
 var spritesmith = require('gulp.spritesmith');
 
 var CFG = JSON.parse(fs.readFileSync('settings.json'));
 
 require('./tasks/jquery.js')();
-require('./tasks/revision.js')();
+// require('./tasks/revision.js')();
 require('./tasks/deploy.js')();
 
 gulp.task('path', function(cb) {
@@ -35,7 +36,10 @@ gulp.task('style', function() {
   return gulp.src('less/style.less')
     .pipe(gulpif(CFG.SRCMAP, sourcemaps.init()))
     .pipe(less())
-    .pipe(postcss([ autoprefixer({ browsers: ['last 10 versions'] }) ]))
+    .pipe(postcss([ 
+      autoprefixer({ browsers: ['last 10 versions'] }),
+      mqpacker({ sort: true })
+    ]))
     .pipe(cssnano())
     .pipe(gulpif(CFG.SRCMAP, sourcemaps.write()))
     .pipe(rename('style.min.css'))
@@ -80,7 +84,7 @@ gulp.task('fonts', function() {
 });
 
 gulp.task('html', function() {
-  var revFiles = JSON.parse(fs.readFileSync(CFG.PATH_PUBLIC + 'rev-manifest.json'));
+  // var revFiles = JSON.parse(fs.readFileSync(CFG.PATH_PUBLIC + 'rev-manifest.json'));
   return gulp.src('html/*.html')
     .pipe(fileinclude({
       prefix: '@@',
@@ -89,9 +93,9 @@ gulp.task('html', function() {
         path: CFG.PATH,
         cssFile: 'css/style.min.css',
         jsFile: 'js/main.min.js',
-        cssFile: revFiles['css/style.min.css'],
-        jsFile: revFiles['js/main.min.js'],
-        jquery: CFG.JQUERY.enabled
+        // cssFile: revFiles['css/style.min.css'],
+        // jsFile: revFiles['js/main.min.js'],
+        jquery: CFG.JQUERY.enabled,
         // jqueryVersion: CFG.JQUERY.version
       }
     }))
@@ -121,7 +125,7 @@ gulp.task('serve', gulp.parallel(
   }
 ));
 
-// gulp.task('init', gulp.series(['path', 'js', 'style', 'revision', 'html', 'jquery', 'image', 'sprite']));
-// gulp.task('build', gulp.series(['path', 'js', 'style', 'revision:clean', 'revision', 'html', 'jquery', 'image', 'sprite']));
-gulp.task('init', gulp.series(['path', 'js', 'style', 'revision', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));
-gulp.task('build', gulp.series(['path', 'js', 'style', 'revision:clean', 'revision', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));  
+// gulp.task('init', gulp.series(['path', 'js', 'style', 'revision', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));
+// gulp.task('build', gulp.series(['path', 'js', 'style', 'revision:clean', 'revision', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));
+gulp.task('init', gulp.series(['path', 'js', 'style', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));
+gulp.task('build', gulp.series(['path', 'js', 'style', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));  
