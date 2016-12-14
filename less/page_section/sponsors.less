@@ -15,6 +15,7 @@
     text-align: center;
     padding-top: 0;
     margin-top: 0;
+    margin-bottom: 70px;
   }
 
   &__list {
@@ -33,16 +34,28 @@
     display: inline-block;
     vertical-align: middle;
     margin-bottom: 40px;
-    font-size: 14px;
+    padding-left: 45px;
+    padding-right: 45px;
+    // font-size: 14px;
   }
 
   &__link {
     display: inline-block;
-    vertical-align: middle;
+
+    transition: all 0.2s ease;
+
+    &:hover .partners__logo{
+      transform: scale(1.2);
+    }
+
   }
 
   &__logo {
-    min-width: 70%;
+    // display: block;
+    // min-width: 70%;
+    width: 210px;
+    height: 70px;
+    transition: all 0.3s ease;
   }
 
 }
