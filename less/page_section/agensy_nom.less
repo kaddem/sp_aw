@@ -64,7 +64,9 @@
   }
 
   &__tabs-link {
+    position: relative;
     display: inline-block;
+    // overflow: hidden;
     color: #fff;
     background-color: @red;
     text-decoration: none;
@@ -123,13 +125,42 @@
   &__item {
     .col-4;
     float: none;
+    // overflow: hidden;
     display: inline-block;
     vertical-align: top;
     height: 260px;
     margin-bottom: 65px;
   }
 
+  &__place {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: @red;
+    color: white;
+    position: absolute;
+    z-index: 10;
+    line-height: 18px;
+    text-align: left;
+    left: 20px;
+    top: -50px;
+    transform: rotate(-135deg);
+  }
+
+  &__num {
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    transform: rotate(135deg);
+  }
+
   &__item-info {
+    overflow: hidden;
+    position: relative;
     display: block;
     background-color: #fff;
     padding: 10px;

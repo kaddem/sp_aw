@@ -23,20 +23,14 @@ navPosition();
 function navPosition() {
   var promoHeight = $('.promo').height();
   var navHeight = $('.nav-block').height();
-  var navPos = promoHeight - navHeight //$('#nav-from').offset().top;
+  var navPos = promoHeight - navHeight 
   var docScroll = $(document).scrollTop();
+ 
 
-  // console.log(promoHeight);
-  // console.log(navHeight);
-  // console.log(navPos);  
-
-  // console.log('высота навигации ' + navHeight)
-  if( docScroll > navPos ) { // если скролл более чем на 500px
+  if( docScroll > navPos ) {
     $('.nav-block').addClass('nav-block--scroll');
-    // $('#nav-from').css('padding-top', navHeight); // то покажем кнопку перемотки вверх
   }
   else { // иначе
     $('.nav-block').removeClass('nav-block--scroll');
-    // $('#nav-from').css('padding-top', 0); // скроем кнопку перемотки
   }
 }
