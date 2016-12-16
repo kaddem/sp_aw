@@ -130,32 +130,53 @@
     vertical-align: top;
     height: 260px;
     margin-bottom: 65px;
+
+    &:first-child .nomination__logo {
+      opacity: 0.9;
+    }
+    &:nth-child(2) .nomination__logo {
+      opacity: 0.7;
+    }
   }
 
   &__place {
     box-sizing: border-box;
-    padding: 10px;
-    width: 100px;
-    height: 100px;
-    background-color: @red;
     color: white;
     position: absolute;
     z-index: 10;
     line-height: 18px;
     text-align: left;
-    left: 20px;
-    top: -50px;
-    transform: rotate(-135deg);
+    left: 10px;
+    top: -15px;
+    transform: rotate(-45deg);
+    transform-origin: 15px 15px;
   }
-
+  &__number {
+    width: 100px;
+    height: 100px;
+    background-color: @red;
+    font-family: @font-circe;
+  }
   &__num {
     font-size: 24px;
-    width: 30px;
-    height: 30px;
-    height: 30px;
+    line-height: 36px;
+    height: 36px;
+    position: relative;
+    top: 54px;
+    left: 10px;
+    width: 36px;
     text-align: center;
     display: inline-block;
-    transform: rotate(135deg);
+    transform: rotate(45deg);
+  }
+
+  &__place-text {
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #000;
   }
 
   &__item-info {
@@ -167,9 +188,10 @@
     line-height: 240px;
     height: 100%;
     box-shadow: 3px 3px 0 0 @shadow-box;
-    border: 1px solid transparent;
+    border: 1px dashed transparent;
     transition: all 0.3s ease;
     box-sizing: border-box;
+    text-decoration: none;
 
     &:hover {
       border: 1px dashed @red;
@@ -178,6 +200,25 @@
         opacity: 1;
       }
     }
+  }
+
+  &__person {
+    font-size: 16px;
+    display: block;
+    line-height: 24px;
+    color: #000;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__name {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: @red;
+    text-transform: uppercase;
   }
 
   &__logo {

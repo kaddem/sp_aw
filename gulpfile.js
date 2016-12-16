@@ -16,7 +16,7 @@ var spritesmith = require('gulp.spritesmith');
 var CFG = JSON.parse(fs.readFileSync('settings.json'));
 
 require('./tasks/jquery.js')();
-// require('./tasks/revision.js')();
+require('./tasks/revision.js')();
 require('./tasks/deploy.js')();
 
 gulp.task('path', function(cb) {
@@ -93,10 +93,10 @@ gulp.task('html', function() {
         path: CFG.PATH,
         cssFile: 'css/style.min.css',
         jsFile: 'js/main.min.js',
-        // cssFile: revFiles['css/style.min.css'],
-        // jsFile: revFiles['js/main.min.js'],
+        cssFile: revFiles['css/style.min.css'],
+        jsFile: revFiles['js/main.min.js'],
         jquery: CFG.JQUERY.enabled,
-        // jqueryVersion: CFG.JQUERY.version
+        jqueryVersion: CFG.JQUERY.version
       }
     }))
     .pipe(gulp.dest(CFG.PATH_PUBLIC));
@@ -125,7 +125,7 @@ gulp.task('serve', gulp.parallel(
   }
 ));
 
-// gulp.task('init', gulp.series(['path', 'js', 'style', 'revision', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));
-// gulp.task('build', gulp.series(['path', 'js', 'style', 'revision:clean', 'revision', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));
-gulp.task('init', gulp.series(['path', 'js', 'style', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));
-gulp.task('build', gulp.series(['path', 'js', 'style', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));  
+gulp.task('init', gulp.series(['path', 'js', 'style', 'revision', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));
+gulp.task('build', gulp.series(['path', 'js', 'style', 'revision:clean', 'revision', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));
+// gulp.task('init', gulp.series(['path', 'js', 'style', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));
+// gulp.task('build', gulp.series(['path', 'js', 'style', 'html', 'jquery', 'image', 'sprite', 'video', 'favicon', 'fonts']));  
